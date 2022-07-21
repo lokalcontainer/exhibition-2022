@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "BDO Grotesk";
+    src: url("/BDOGrotesk-VF.woff");
+    font-style: normal;
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: "VAR 1";
+    src: url("/VAR1GX.ttf");
+    font-style: normal;
+    font-weight: 100 600;
+}
+@font-face {
+    font-family: "VAR 2";
+    src: url("/VAR2GX.ttf");
+    font-style: normal;
+    font-weight: 100 600;
+}
+@font-face {
+    font-family: "VAR 3";
+    src: url("/VAR3GX.ttf");
+    font-style: normal;
+    font-weight: 100 600;
+}
+@font-face {
+    font-family: "VAR 4";
+    src: url("/VAR4GX.ttf");
+    font-style: normal;
+    font-weight: 100 600;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "BDO Grotesk", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+        Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
