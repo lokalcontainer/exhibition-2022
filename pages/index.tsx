@@ -1,11 +1,12 @@
 import TextView from "Components/TextView";
 import TextNavigation from "Components/TextNavigation";
+import { useFont } from "context/ContextFont";
 
 export default function Page() {
+    const { font } = useFont();
     return (
         <>
             <div
-                id="__text_view"
                 style={{
                     height: "100vh",
                     width: "100vw",
@@ -13,9 +14,9 @@ export default function Page() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: "#151515",
-                    color: "#f5f5f5",
-                    overflow: "hidden"
+                    overflow: "hidden",
+                    backgroundColor: font.misc.background,
+                    color: font.misc.foreground
                 }}
             >
                 <TextView />

@@ -1,8 +1,7 @@
 import { useFont } from "context/ContextFont";
-import texts from "libs/texts.json";
 
 export default function TextNavigation() {
-    const { setFontFamily, fontFamily } = useFont();
+    const { fonts, font, setFont } = useFont();
 
     return (
         <nav
@@ -12,7 +11,6 @@ export default function TextNavigation() {
                 top: "4em",
                 transform: "translateX(-50%)",
                 zIndex: 2000
-                // backgroundColor: "red"
             }}
         >
             <ul
@@ -24,7 +22,7 @@ export default function TextNavigation() {
                     gap: "1em"
                 }}
             >
-                {texts.map((item, i) => (
+                {fonts.map((item, i) => (
                     <li key={i}>
                         <button
                             style={{
@@ -32,16 +30,18 @@ export default function TextNavigation() {
                                 background: "none",
                                 margin: 0,
                                 padding: "1em",
-                                border: "3px solid",
+                                border: "3px solid currentColor",
                                 cursor: "pointer",
-                                color: "#f5f5f5",
-                                backgroundColor: fontFamily === item.family ? "#0000ff" : "#151515",
+                                color: item === font ? item.misc.background : item.misc.foreground,
+                                backgroundColor:
+                                    item === font ? item.misc.foreground : item.misc.background,
                                 borderRadius: "2em",
-                                overflow: "hidden"
+                                overflow: "hidden",
+                                whiteSpace: "nowrap"
                             }}
-                            onClick={() => setFontFamily(item.family)}
+                            onClick={() => setFont(item)}
                         >
-                            <span style={{ fontSize: "3em", fontWeight: 200 }}>{item.family}</span>
+                            <span style={{ fontSize: "2em" }}>{item.family}</span>
                         </button>
                     </li>
                 ))}

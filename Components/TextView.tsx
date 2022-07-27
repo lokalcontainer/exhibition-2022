@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { useFont } from "context/ContextFont";
 import useMouseMove from "hooks/use-mouse-move";
-import texts from "libs/texts.json";
 
 export default function TextView() {
-    const { fontFamily, axes, setAxes } = useFont();
+    const { font, axes, setAxes } = useFont();
 
     const { x, y } = useMouseMove();
 
@@ -40,20 +39,18 @@ export default function TextView() {
     return (
         <div
             style={{
-                fontSize: "25em",
-                fontFamily: `"${fontFamily}"`,
+                fontSize: font.misc.fontSize,
+                fontFamily: `"${font.family}"`,
                 fontVariationSettings,
                 textAlign: "center",
-                lineHeight: 0.7,
+                // lineHeight: 0.7,
                 whiteSpace: "pre-wrap",
                 userSelect: "none",
-                pointerEvents: "none"
+                pointerEvents: "none",
+                transition: "all .33s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
             }}
         >
-            {texts
-                .find((item) => item.family === fontFamily)
-                ?.text.split(" ")
-                .join("\n")}
+            {font.text}
         </div>
     );
 }

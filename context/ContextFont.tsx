@@ -8,18 +8,20 @@ import {
     useEffect
 } from "react";
 import useMouseMove from "hooks/use-mouse-move";
+import fonts from "libs/fonts.json";
 
 type Axis = { tag: string; value: number; min: number; max: number; defaultValue: number };
 
 type ContextFontProps = {
-    fontWeight: number;
-    setFontWeight: Dispatch<SetStateAction<number>>;
-
     fontFamily: string;
     setFontFamily: Dispatch<SetStateAction<string>>;
 
     axes: Axis[];
     setAxes: Dispatch<SetStateAction<Axis[]>>;
+
+    font: typeof fonts[0];
+    setFont: Dispatch<SetStateAction<typeof fonts[0]>>;
+    fonts: typeof fonts;
 };
 
 const ContextFont = createContext<ContextFontProps>(undefined!);
@@ -29,7 +31,9 @@ export const ConsumerFont = ContextFont.Consumer;
 
 export const ProviderFont = (props: PropsWithChildren) => {
     const { children } = props;
-    const [fontWeight, setFontWeight] = useState(400);
+
+    const [font, setFont] = useState(fonts[1]);
+
     const [fontFamily, setFontFamily] = useState("VAR 2");
 
     const [axes, setAxes] = useState<Axis[]>([
@@ -68,7 +72,7 @@ export const ProviderFont = (props: PropsWithChildren) => {
 
     return (
         <ContextFont.Provider
-            value={{ fontWeight, setFontWeight, fontFamily, setFontFamily, axes, setAxes }}
+            value={{ fonts, font, setFont, fontFamily, setFontFamily, axes, setAxes }}
         >
             {children}
 
