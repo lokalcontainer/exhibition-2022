@@ -1,0 +1,65 @@
+[
+    {
+        "family": "VAR 1",
+        "text": "UNESCO",
+        "misc": {
+            "foreground": "#ff5722",
+            "background": "#9c27b0",
+            "fontSize": "25em"
+        }
+    },
+    {
+        "family": "VAR 2",
+        "text": "UNESCO",
+        "misc": {
+            "foreground": "#f5f5f5",
+            "background": "#0000ff",
+            "fontSize": "25em"
+        }
+    },
+    {
+        "family": "VAR 3",
+        "text": " asean",
+        "misc": {
+            "foreground": "#607d8b",
+            "background": "#ff5722",
+            "fontSize": "25em"
+        }
+    },
+    {
+        "family": "VAR 4",
+        "text": "C",
+        "misc": {
+            "foreground": "#000000",
+            "background": "#59ab62",
+            "fontSize": "25em"
+        }
+    },
+    {
+        "family": "VAR 5",
+        "text": "R",
+        "misc": {
+            "foreground": "#4caf50",
+            "background": "#ab5980",
+            "fontSize": "25vh"
+        }
+    },
+    {
+        "family": "VAR 6",
+        "text": "R",
+        "misc": {
+            "foreground": "#f5f5f5",
+            "background": "#ff0000",
+            "fontSize": "25em"
+        }
+    },
+    {
+        "family": "VAR 7",
+        "text": "MTL",
+        "misc": {
+            "foreground": "#1e00ff",
+            "background": "#ff006e",
+            "fontSize": "12em"
+        }
+    }
+]
