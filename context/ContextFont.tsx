@@ -70,6 +70,15 @@ export const ProviderFont = (props: PropsWithChildren) => {
         });
     }, [x, y]);
 
+    useEffect(() => {
+        const cssForeground = "--foreground";
+        const cssBackground = "--background";
+
+        const doc = document.documentElement;
+        doc.style.setProperty(cssForeground, font.misc.foreground);
+        doc.style.setProperty(cssBackground, font.misc.background);
+    }, [font]);
+
     return (
         <ContextFont.Provider
             value={{ fonts, font, setFont, fontFamily, setFontFamily, axes, setAxes }}

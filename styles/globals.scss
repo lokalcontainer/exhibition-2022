@@ -1,3 +1,5 @@
+@import "input.scss";
+
 @font-face {
     font-family: "BDO Grotesk";
     src: url("/BDOGrotesk-VF.woff");
@@ -46,6 +48,11 @@
     src: url("/VAR7GX.ttf");
     font-style: normal;
     font-weight: 100 600;
+}
+
+:root {
+    --background: #fff;
+    --foreground: #000;
 }
 
 html,

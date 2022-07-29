@@ -1,6 +1,7 @@
 import TextView from "Components/TextView";
 import TextNavigation from "Components/TextNavigation";
 import { useFont } from "context/ContextFont";
+import TextManual from "Components/TextManual";
 
 export default function Page() {
     const { font } = useFont();
@@ -22,6 +23,7 @@ export default function Page() {
                 <TextView />
             </div>
             <TextNavigation />
+            <TextManual />
         </>
     );
 }

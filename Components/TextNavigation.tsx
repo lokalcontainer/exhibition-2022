@@ -19,6 +19,7 @@ export default function TextNavigation() {
                     padding: 0,
                     margin: 0,
                     display: "flex",
+                    alignItems: "center",
                     gap: "1em"
                 }}
             >
@@ -26,22 +27,37 @@ export default function TextNavigation() {
                     <li key={i}>
                         <button
                             style={{
-                                fontFamily: "inherit",
+                                fontSize: "inherit",
+                                width: "8em",
+                                height: "6em",
+                                fontFamily: `"${item.family}"`,
+                                fontVariationSettings: `"wght" 400, "wdth" 400`,
                                 background: "none",
                                 margin: 0,
-                                padding: "1em",
-                                border: "3px solid currentColor",
+                                border: `1px solid ${
+                                    item !== font ? font.misc.foreground : "transparent"
+                                }`,
                                 cursor: "pointer",
-                                color: item === font ? item.misc.background : item.misc.foreground,
                                 backgroundColor:
-                                    item === font ? item.misc.foreground : item.misc.background,
-                                borderRadius: "2em",
+                                    item === font ? item.misc.foreground : font.misc.background,
+                                color: item === font ? item.misc.background : font.misc.foreground,
+                                borderRadius: "1em",
                                 overflow: "hidden",
-                                whiteSpace: "nowrap"
+                                whiteSpace: "pre-wrap",
+                                lineHeight: 0.7,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                boxShadow:
+                                    item === font
+                                        ? `0 0 2em 0 ${font.misc.foreground}`
+                                        : `inset 0 0 0.3em 0 ${font.misc.foreground}`
                             }}
                             onClick={() => setFont(item)}
                         >
-                            <span style={{ fontSize: "2em" }}>{item.family}</span>
+                            <span style={{ fontSize: "1.5em" }}>
+                                {item.text.split(" ").join("\n")}
+                            </span>
                         </button>
                     </li>
                 ))}

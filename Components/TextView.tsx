@@ -43,14 +43,15 @@ export default function TextView() {
                 fontFamily: `"${font.family}"`,
                 fontVariationSettings,
                 textAlign: "center",
-                // lineHeight: 0.7,
+                lineHeight: 0.7,
                 whiteSpace: "pre-wrap",
+                hyphens: "auto",
                 userSelect: "none",
                 pointerEvents: "none",
-                transition: "all .33s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                transition: "font-variation-settings .33s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
             }}
         >
-            {font.text}
+            {font.text.split(" ").join("\n")}
         </div>
     );
 }
