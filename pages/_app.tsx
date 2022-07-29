@@ -60,7 +60,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 />
             </NextHead>
 
-            <NextScript src="/scripts/TouchFree_Tooling.js" strategy="beforeInteractive" />
             <NextScript src="/scripts/TouchFree_Test.js" />
             <ProviderFont>
                 <Component {...pageProps} />
